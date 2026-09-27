@@ -1,1 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>I'M SORRY GUGGU 🥺</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:"Segoe UI",sans-serif;
+}
+
+body{
+    min-height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#eee0ff,#f8eaff,#e4d4ff);
+    color:#43265f;
+}
+
+.page{
+    width:100%;
+    min-height:100vh;
+    display:none;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px;
+    position:relative;
+}
+
+.page.active{
+    display:flex;
+    animation:fade .7s ease;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.content{
+    max-width:650px;
+}
+
+h1{
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+h2{
+    font-size:30px;
+    margin-bottom:18px;
+}
+
+p{
+    font-size:19px;
+    line-height:1.7;
+}
+
+.small{
+    margin-top:20px;
+    opacity:.75;
+}
+
+button{
+    border:none;
+    cursor:pointer;
+}
+
+.next{
+    margin-top:30px;
+    padding:13px 28px;
+    border-radius:30px;
+    background:#7b4ba3;
+    color:white;
+    font-size:16px;
+    box-shadow:0 8px 20px rgba(80,40,100,.2);
+}
+
+.next:hover{
+    transform:scale(1.05);
+}
+
+.music-btn,
+.gift-btn{
+    position:fixed;
+    top:20px;
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:white;
+    font-size:21px;
+    z-index:100;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+}
+
+.music-btn{
+    right:20px;
+}
+
+.gift-btn{
+    left:20px;
+}
+
+.heart{
+    font-size:75px;
+    margin-bottom:20px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.12);
+    }
+}
+
+.envelope{
+    font-size:100px;
+    cursor:pointer;
+    animation:float 2s infinite ease-in-out;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+.letter{
+    background:rgba(255,255,255,.65);
+    padding:30px;
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(70,30,90,.15);
+    backdrop-filter:blur(10px);
+}
+
+.final-heart{
+    font-size:90px;
+    margin-bottom:15px;
+}
+
+.sorry-title{
+    font-size:48px;
+    letter-spacing:2px;
+}
+
+.sorry-lines{
+    font-size:21px;
+    line-height:2;
+    margin:20px 0;
+}
+
+.final-message{
+    max-width:550px;
+    margin:auto;
+}
+
+.love{
+    margin-top:25px;
+    font-size:24px;
+    font-weight:bold;
+}
+
+.popup{
+    position:fixed;
+    inset:0;
+    background:rgba(30,10,40,.45);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:200;
+}
+
+.popup-box{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    width:85%;
+    max-width:400px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.popup-box h2{
+    color:#704092;
+}
+
+.close{
+    margin-top:20px;
+    padding:10px 22px;
+    border-radius:20px;
+    background:#704092;
+    color:white;
+}
+
+.floating{
+    position:fixed;
+    pointer-events:none;
+    animation:rise linear forwards;
+    z-index:0;
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(100vh) rotate(0deg);
+        opacity:0;
+    }
+    15%{
+        opacity:1;
+    }
+    to{
+        transform:translateY(-120px) rotate(360deg);
+        opacity:0;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+    <source src="Khayal Hai Bada Unka - Alfaaz _ Hamza Malik.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BUTTONS -->
+
+<button class="music-btn" id="musicBtn">🔊</button>
+
+<button class="gift-btn" id="giftBtn">🎁</button>
+
+
+<!-- PAGE 1 -->
+
+<section class="page active">
+
+    <div class="content">
+
+        <div class="heart">🥺❤️</div>
+
+        <h1>GUGGU...</h1>
+
+        <h2>I Have Something To Say</h2>
+
+        <p>
+            I know you're upset with me...
+            and honestly, I don't blame you.
+        </p>
+
+        <p class="small">
+            Bas ek baar meri baat sun lena... 🥺
+        </p>
+
+        <button class="next">Continue 💌</button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="page">
+
+    <div class="content">
+
+        <div class="heart">💔</div>
+
+        <h2>I Know I Hurt You</h2>
+
+        <p>
+            Shayad meri baaton ya meri kisi galti ne
+            tumhe hurt kiya.
+        </p>
+
+        <p>
+            Aur mujhe genuinely iska regret hai.
+        </p>
+
+        <button class="next">Next 💜</button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="page">
+
+    <div class="content">
+
+        <div class="heart">🥺</div>
+
+        <h2>I'm Truly Sorry</h2>
+
+        <p>
+            GUGGU, I'm really sorry.
+        </p>
+
+        <p>
+            Mera intention kabhi bhi tumhe sad
+            ya hurt karna nahi tha.
+        </p>
+
+        <p class="small">
+            But I know intention se zyada important
+            hota hai ki saamne wale ko kaisa feel hua.
+        </p>
+
+        <button class="next">Next 💌</button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 4 -->
+
+<section class="page">
+
+    <div class="content">
+
+        <div class="heart">🫶🏻</div>
+
+        <h2>You Mean A Lot To Me</h2>
+
+        <p>
+            Tum meri life ka ek bahut important
+            part ho.
+        </p>
+
+        <p>
+            Isliye tumhara mujhse naraz hona
+            mujhe bhi andar se bahut bura lagta hai.
+        </p>
+
+        <button class="next">One More 💜</button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 5 -->
+
+<section class="page">
+
+    <div class="content">
+
+        <div class="envelope" id="envelope">
+            💌
+        </div>
+
+        <h2>Open This For You</h2>
+
+        <p>
+            Ek chhoti si letter hai...
+        </p>
+
+        <button class="next" id="openLetter">
+            Open Letter 💌
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- PAGE 6 -->
+
+<section class="page">
+
+    <div class="content letter">
+
+        <h2>Dear GUGGU 🥺</h2>
+
+        <p>
+            Mujhe pata hai ki sirf "sorry" bol dene se
+            sab kuch instantly theek nahi ho jaata.
+        </p>
+
+        <br>
+
+        <p>
+            But I genuinely want you to know
+            that I'm sorry for hurting you.
+        </p>
+
+        <br>
+
+        <p>
+            Tum mere liye important ho,
+            aur main kabhi nahi chahta ki meri wajah
+            se tum sad raho.
+        </p>
+
+        <br>
+
+        <p>
+            I can't change what already happened,
+            but I can learn from it
+            and try to do better.
+        </p>
+
+        <br>
+
+        <p>
+            Bas dil se ek baar kehna tha...
+        </p>
+
+        <br>
+
+        <h2>I'M SORRY, GUGGU. 🥺❤️</h2>
+
+        <button class="next">Last One 💌</button>
+
+    </div>
+
+</section>
+
+
+<!-- FINAL PAGE -->
+
+<section class="page">
+
+    <div class="content">
+
+        <div class="final-heart">
+            ❤️‍🩹
+        </div>
+
+        <h1 class="sorry-title">
+            I'M SORRY,<br>
+            GUGGU.
+        </h1>
+
+        <div class="sorry-lines">
+            For hurting you.<br>
+            For making you sad.<br>
+            For everything. 🥺
+        </div>
+
+        <p class="final-message">
+            I can't change what already happened,
+            but I can make sure I learn from it.
+            I just hope that someday you'll be able
+            to forgive me.
+        </p>
+
+        <div class="love">
+            You mean so much to me. 💙
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GIFT POPUP -->
+
+<div class="popup" id="popup">
+
+    <div class="popup-box">
+
+        <h2>For My GUGGU 🎁</h2>
+
+        <p>
+            Ye chhota sa surprise sirf tumhare liye hai.
+            ❤️
+        </p>
+
+        <p style="margin-top:15px;">
+            I hope this little page
+            makes you smile. 🥺
+        </p>
+
+        <button class="close" id="close">
+            Close 💜
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const pages = document.querySelectorAll(".page");
+const nextButtons = document.querySelectorAll(".next");
+
+let current = 0;
+
+nextButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        if(current < pages.length - 1){
+
+            pages[current].classList.remove("active");
+
+            current++;
+
+            pages[current].classList.add("active");
+
+        }
+
+    });
+
+});
+
+
+/* MUSIC */
+
+const music = document.getElementById("music");
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+    if(!playing){
+
+        music.play().then(() => {
+
+            playing = true;
+            musicBtn.innerHTML = "🎵";
+
+        }).catch(() => {
+
+            alert("Please upload the MP3 file in the same GitHub folder.");
+
+        });
+
+    }else{
+
+        music.pause();
+
+        playing = false;
+
+        musicBtn.innerHTML = "🔊";
+
+    }
+
+});
+
+
+/* GIFT */
+
+const giftBtn = document.getElementById("giftBtn");
+const popup = document.getElementById("popup");
+const close = document.getElementById("close");
+
+giftBtn.addEventListener("click", () => {
+
+    popup.style.display = "flex";
+
+});
+
+close.addEventListener("click", () => {
+
+    popup.style.display = "none";
+
+});
+
+
+/* LETTER */
+
+const envelope = document.getElementById("envelope");
+
+envelope.addEventListener("click", () => {
+
+    envelope.style.transform = "scale(1.15)";
+
+});
+
+
+/* FLOATING HEARTS */
+
+const emojis = [
+    "❤️",
+    "💜",
+    "💗",
+    "💖",
+    "🌸",
+    "🌷",
+    "🥺",
+    "✨"
+];
+
+function createFloating(){
+
+    const element = document.createElement("div");
+
+    element.className = "floating";
+
+    element.innerHTML =
+        emojis[Math.floor(Math.random()*emojis.length)];
+
+    element.style.left =
+        Math.random()*100 + "vw";
+
+    element.style.fontSize =
+        (15 + Math.random()*25) + "px";
+
+    element.style.animationDuration =
+        (5 + Math.random()*6) + "s";
+
+    document.body.appendChild(element);
+
+    setTimeout(() => {
+
+        element.remove();
+
+    },11000);
+
+}
+
+setInterval(createFloating,500);
+
+</script>
+
+</body>
+</html>
